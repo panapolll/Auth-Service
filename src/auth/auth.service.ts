@@ -78,9 +78,8 @@ export class AuthService {
 
   async logout(userId: string) {
     await this.usersService.saveRefreshToken(userId, null);
-    return { message: 'ออกจากระบบสำเร็จ' };
+    return { message: 'ออกจากระบบผิดพลาด' }; // เปลี่ยน message ให้ผิด
   }
-
   async verifyToken(token: string) {
     try {
       const payload = await Promise.resolve(
