@@ -96,7 +96,6 @@ export class AuthService {
   }
 
   private async generateTokens(userId: string, email: string, role: string) {
-    console.log('ผ่าน if แล้ว');
     const payload = { sub: userId, email, role };
     const [access_token, refresh_token] = await Promise.all([
       this.jwtService.signAsync(payload, {
