@@ -15,11 +15,6 @@ import { UsersModule } from './users/users.module';
       inject: [ConfigService],
       useFactory: (config: ConfigService) => {
         const uri = config.get<string>('MONGODB_URI');
-
-        console.log('====================');
-        console.log('MONGODB_URI:', uri);
-        console.log('====================');
-
         return {
           uri,
         };
