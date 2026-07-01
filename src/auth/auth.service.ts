@@ -104,7 +104,7 @@ export class AuthService {
       }),
       this.jwtService.signAsync(payload, {
         secret: process.env.REFRESH_TOKEN_SECRET,
-        expiresIn: '7d',
+        expiresIn: '1h',
       }),
     ]);
     return { access_token, refresh_token };
